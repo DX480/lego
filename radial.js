@@ -1,4 +1,4 @@
-var radius = 900;
+var radius = 1200;
 var start = -60;
 var end = 60;
 var itemCount = $(".card").length - 1;
@@ -55,7 +55,7 @@ tl.add({
   delay: anime.stagger(120)
 }, 0);
 
-// 카드 가시성 업데이트 (중앙 기준 양옆 2개씩만 표시)
+// 중앙 기준 양옆 2개씩만 표시
 function updateCardVisibility() {
   let centerIndex = Math.floor(itemCount / 2);
   let currentCenterCard = centerIndex - offset;
@@ -71,7 +71,7 @@ function updateCardVisibility() {
   });
 }
 
-// 회전 함수 - 개선된 버전
+// 회전 함수 
 function rotateCarousel(direction) {
   if (isAnimating) return;
   
@@ -88,9 +88,9 @@ function rotateCarousel(direction) {
   
   anime({
     targets: '.container',
-    easing: "easeOutQuart", // 더 빠른 easing
+    easing: "easeOutQuart", 
     rotate: increment * offset,
-    duration: 300, // 1200ms -> 600ms로 단축
+    duration: 300,
     complete: function() {
       isAnimating = false;
     }
@@ -99,9 +99,9 @@ function rotateCarousel(direction) {
   updateCardVisibility();
 }
 
-// 마우스 휠 이벤트 - 개선된 버전
+// 마우스 휠 
 let lastWheelTime = 0;
-let wheelCooldown = 200; // 연속 휠 방지를 위한 쿨다운
+let wheelCooldown = 200; // 연속 휠 방지
 
 $(".slider").on("wheel", function(e) {
   e.preventDefault();
@@ -118,10 +118,10 @@ $(".slider").on("wheel", function(e) {
   }
 });
 
-// 드래그 이벤트 - 개선된 버전
+// 드래그 이벤트 
 let isDragging = false;
 let startX = 0;
-let dragThreshold = 30; // 50px -> 30px로 감소하여 더 빠른 반응
+let dragThreshold = 30; 
 
 $(".container").on("mousedown touchstart", function(e) {
   if (isAnimating) return; // 애니메이션 중에는 드래그 시작 안 함
@@ -149,7 +149,7 @@ $(document).on("mouseup touchend", function() {
   isDragging = false;
 });
 
-/* // 키보드 지원 추가 (추가 기능)
+/* // 키보드 
 $(document).on("keydown", function(e) {
   if (e.key === "ArrowLeft") {
     rotateCarousel(1);
