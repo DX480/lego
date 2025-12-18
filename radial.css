@@ -27,7 +27,7 @@ body{
   pointer-events: none;
 }
 .slide{
-  width:230px;
+  width:200px;
   height:300px;
   position:absolute;
   transform: translatex(-50%);
