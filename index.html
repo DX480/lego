@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEGO</title>
+
+    <!-- font -->
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+  </head>
+  <body>
+    <div class="lego_wrap">
+      <!-- header -->
+      <header class="header">
+        <nav class="left_gnb">
+          <ul>
+            <li><a href="#">쇼핑</a></li>
+            <li><a href="#">브랜드 소개</a></li>
+            <li><a href="#">지원</a></li>
+            <li><a href="#">플레이존</a></li>
+          </ul>
+        </nav>
+        <!-- left_gnb -->
+
+        <h1 class="logo">
+          <a href="">
+            <img src="../images/logo.svg" alt="로고" />
+          </a>
+        </h1>
+
+        <nav class="right_gnb">
+          <ul>
+            <li><img src="images/search.svg" alt="검색" /></li>
+            <li>
+              <a href="#"><img src="images/sign_in.svg" alt="로그인" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="images/like.svg" alt="찜목록" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="images/shopping.svg" alt="장바구니" /></a>
+            </li>
+          </ul>
+        </nav>
+        <!-- right_gnb -->
+      </header>
+
+      <section class="section_banner">
+        <div class="banner_title_wrap">
+          <p class="banner_title">IT’S PLAYTIME.</p>
+          <p class="banner_article">
+            레고와 함께 무한한 창의력의 세계를<br />펼쳐보세요
+          </p>
+        </div>
+        <!-- banner_title_wrap -->
+
+        <img src="images/banner_img.png" alt="배너 이미지" />
+
+        <div class="btn_wrap">
+          <div class="banner_btn">
+            <a href="https://www.lego.com/ko-kr/service/building-instructions">
+              <img src="images/Page_perspective_matte.svg" alt="조립설명서" />
+              <div class="txt_wrap">
+                <p class="content_title_small">
+                  조립설명서를<br />잃어버리셨나요?
+                </p>
+                <p class="btn_article">
+                  제품명을 검색하고 설명서를 찾을 수 있어요!
+                </p>
+              </div>
+            </a>
+          </div>
+          <!-- banner_btn -->
+
+          <div class="banner_btn">
+            <a href="https://kids.lego.com/ko-kr">
+              <img src="images/Gamepad_perspective_matte.svg" alt="플레이존" />
+              <div class="txt_wrap">
+                <p class="content_title_small">
+                  놀고! 탐험하고!<br />퀴즈도 풀고ー!
+                </p>
+                <p class="btn_article">레고의 다양한 게임을 즐겨 보세요!</p>
+              </div>
+            </a>
+          </div>
+          <!-- banner_btn -->
+        </div>
+        <!-- btn_wrap -->
+      </section>
+      <!-- section_banner -->
+
+
+      <section class="section_new">
+        <div class="section_title_wrap">
+          <p class="section_title">NEW</p>
+          <p class="section_article">레고 신제품을 빠르게 만나보세요!</p>
+        </div>
+
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+      </section>
+      <!-- section_new -->
+
+      <section class="section_series"></section>
+      <!-- section_series -->
+      <section class="section_comingsoon"></section>
+      <!-- section_comingsoon -->
+      <section class="section_about"></section>
+      <!-- section_about -->
+      <section class="section_builder"></section>
+      <!-- section_builder -->
+      <section class="section_news"></section>
+      <!-- section_news -->
+
+      <footer class="footer"></footer>
+    </div>
+          <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/new.js"></script>
+    <!-- lego_wrap -->
+  </body>
+</html>
