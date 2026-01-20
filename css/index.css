@@ -56,6 +56,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 /* section_banner */
 .section_banner {
   position: relative;
@@ -76,7 +77,7 @@
   flex-direction: column;
 }
 
-.banner_title {
+.banner_title_wrap p:first-child {
   font-family: "Rubik", sans-serif;
   font-size: 198px;
   font-weight: 900;
@@ -86,7 +87,7 @@
   -webkit-text-stroke-color: #ffc70f;
 }
 
-.banner_article {
+.banner_title_wrap p:last-child{
   font-size: 46px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -102,7 +103,7 @@
   height: auto;
 }
 
-.section_banner .btn_wrap {
+.section_banner .banner_btn_wrap {
   position: absolute;
   top: 50%;
   left: 5%;
@@ -113,11 +114,13 @@
   justify-content: space-between;
 }
 
-.section_banner .btn_wrap .banner_btn {
+.section_banner .banner_btn_wrap .banner_btn {
   width: 436px;
+  position: relative;
+  overflow: hidden;
 }
 
-.section_banner .btn_wrap .banner_btn a {
+.section_banner .banner_btn_wrap .banner_btn a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,22 +133,52 @@
   text-decoration: none;
 }
 
-.section_banner .btn_wrap .banner_btn:last-child a {
+.section_banner .banner_btn_wrap .banner_btn a .plus_icon_btn{
+  display: none;
+}
+
+.section_banner .banner_btn_wrap .banner_btn:last-child a {
   gap: 24px;
 }
-.section_banner .btn_wrap .banner_btn a .txt_wrap {
+
+
+.section_banner .banner_btn_wrap .banner_btn a .txt_wrap {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 5px;
 }
 
-.section_banner .btn_wrap .banner_btn a .btn_article {
+.section_banner .banner_btn_wrap .banner_btn a .btn_article {
   font-size: 16px;
   letter-spacing: -1px;
   font-weight: 300;
   color: #6c6c6c;
 }
+
+.section_banner .banner_btn_wrap .banner_btn a:hover .plus_icon_btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.section_banner .banner_btn_wrap .banner_btn a :is(img, .txt_wrap){ 
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+
+.section_banner .banner_btn_wrap .banner_btn a:hover :is(img, .txt_wrap){ 
+  opacity: 0;
+}
+
+.section_banner .banner_btn_wrap .banner_btn a .banner_btm_bg_img{
+  position: absolute;
+  bottom: 0;
+  right:0;
+}
+
 
 /* section_new */
 .section_new {

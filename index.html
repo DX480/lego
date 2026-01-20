@@ -19,14 +19,21 @@
       rel="stylesheet"
     />
 
+    
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/index.css" />
+    
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/4ffb53f389.js" crossorigin="anonymous"></script>
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   </head>
   <body>
     <div class="lego_wrap">
+     
       <!-- header -->
       <header class="header">
         <nav class="left_gnb">
@@ -36,11 +43,10 @@
             <li><a href="#">지원</a></li>
             <li><a href="#">플레이존</a></li>
           </ul>
-        </nav>
-        <!-- left_gnb -->
+        </nav><!-- left_gnb -->
 
         <h1 class="logo">
-          <a href="">
+          <a href=".section_banner">
             <img src="../images/logo.svg" alt="로고" />
           </a>
         </h1>
@@ -58,22 +64,22 @@
               <a href="#"><img src="images/shopping.svg" alt="장바구니" /></a>
             </li>
           </ul>
-        </nav>
-        <!-- right_gnb -->
+        </nav><!-- right_gnb -->
       </header>
 
+      <!-- section_banner -->
       <section class="section_banner">
+
         <div class="banner_title_wrap">
-          <p class="banner_title">IT’S PLAYTIME.</p>
-          <p class="banner_article">
+          <p>IT’S PLAYTIME.</p>
+          <p>
             레고와 함께 무한한 창의력의 세계를<br />펼쳐보세요
           </p>
-        </div>
-        <!-- banner_title_wrap -->
+        </div> <!-- banner_title_wrap -->
 
         <img src="images/banner_img.png" alt="배너 이미지" />
 
-        <div class="btn_wrap">
+        <div class="banner_btn_wrap">
           <div class="banner_btn">
             <a href="https://www.lego.com/ko-kr/service/building-instructions">
               <img src="images/Page_perspective_matte.svg" alt="조립설명서" />
@@ -85,9 +91,13 @@
                   제품명을 검색하고 설명서를 찾을 수 있어요!
                 </p>
               </div>
+              <div class="plus_icon_btn">
+                <i class="fa-solid fa-plus"></i>
+                <p>조립설명서찾으러가기</p>
+              </div><!-- plus_icon_btn -->
+              <img class="banner_btm_bg_img" src="images/banner_btn_01.png" alt="조립설명서찾으러가기">
             </a>
-          </div>
-          <!-- banner_btn -->
+          </div><!-- banner_btn -->
 
           <div class="banner_btn">
             <a href="https://kids.lego.com/ko-kr">
@@ -98,53 +108,55 @@
                 </p>
                 <p class="btn_article">레고의 다양한 게임을 즐겨 보세요!</p>
               </div>
+               <div class="plus_icon_btn">
+                <i class="fa-solid fa-plus"></i>
+                <p>플레이존게임하러가기</p>
+              </div><!-- plus_icon_btn -->
+              <img class="banner_btm_bg_img" src="images/banner_btn_02.png" alt="조립설명서찾으러가기">
             </a>
-          </div>
-          <!-- banner_btn -->
-        </div>
-        <!-- btn_wrap -->
-      </section>
-      <!-- section_banner -->
+          </div> <!-- banner_btn -->
+        </div><!-- banner_btn_wrap -->
+      </section><!-- section_banner -->
 
 
       <section class="section_new">
         <div class="section_title_wrap">
           <p class="section_title">NEW</p>
           <p class="section_article">레고 신제품을 빠르게 만나보세요!</p>
-        </div>
+        </div><!-- section_title_wrap -->
 
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div><!-- swiper mySwiper -->
       </section>
       <!-- section_new -->
 
@@ -161,7 +173,7 @@
 
       <footer class="footer"></footer>
     </div>
-          <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        
     <script src="js/new.js"></script>
     <!-- lego_wrap -->
   </body>
