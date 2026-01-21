@@ -68,13 +68,24 @@
     linear-gradient(to bottom, #f2f2f2 2px, transparent 2px);
 }
 
-.banner_title_wrap {
+.banner_title_wrap  {
   position: absolute;
   top: 10%;
   left: 5%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+}
+.banner_title_wrap{
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+}
+.banner_title_wrap {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: all 0.8s ease;
 }
 
 .banner_title_wrap p:first-child {
@@ -118,6 +129,9 @@
   width: 436px;
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
+  border: 3px solid #fff;
+  
 }
 
 .section_banner .banner_btn_wrap .banner_btn a {
@@ -127,10 +141,9 @@
   width: 100%;
   padding: 24px;
   box-sizing: border-box;
-  border: 3px solid #fff;
-  border-radius: 16px;
   background: rgba(242, 242, 242, 0.9);
   text-decoration: none;
+  
 }
 
 .section_banner .banner_btn_wrap .banner_btn a .plus_icon_btn{
@@ -175,8 +188,20 @@
 
 .section_banner .banner_btn_wrap .banner_btn a .banner_btm_bg_img{
   position: absolute;
-  bottom: 0;
-  right:0;
+  bottom: -10%;
+  right: -20%;
+  opacity: 0;
+  transform: translateY(0) rotate(0deg);
+  transition:
+    transform 0.6s;
+   transition-delay: 0s;
+}
+
+.section_banner .banner_btn_wrap .banner_btn a:hover .banner_btm_bg_img{
+  opacity: 1;
+  transform: rotate(-20deg);
+  transform-origin: center bottom;
+  
 }
 
 
