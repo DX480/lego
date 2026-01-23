@@ -53,7 +53,7 @@ var didScroll;
 
 var lastScrollTop = 0;
 var delta = 5; //동작의 구현이 시작되는 위치
-var navbatHeight = $('.header').outerHeight(); //영향을 받을 요소를 선택
+var navbatHeight = $('header').outerHeight(); //영향을 받을 요소를 선택
 
 $(window).scroll(function(evnet){ //스크롤 시 사용자가 스크롤했다는 것을 알림
   didScroll  = true;
@@ -74,12 +74,12 @@ function hasScrolled(){
 
   if(st > lastScrollTop && st > navbatHeight){
     // Scroll Down
-    $('.header').addClass('nav-up');
+    $('header').addClass('nav-up');
     //$('header').removeClass('nav-down').addClass('nav-up');
   } else {
     if(st + $(window).height() < $(document).height()) {
       // Scroll Up
-      $('.header').removeClass('nav-up');
+      $('header').removeClass('nav-up');
       //$('header').removeClass('nav-up').addClass('nav-down');
     }
   }
