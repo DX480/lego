@@ -3,7 +3,10 @@ var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: "auto",
+      slidesPerView: '3',
+      autoHeight:true,
+      spaceBetween: 10,
+      touchRatio: 0,
       speed: 1200,
       coverflowEffect: {
         rotate: 50,
@@ -20,5 +23,19 @@ var swiper = new Swiper(".mySwiper", {
         invert: false,
       },
 
-      
+      on: {
+
+        init: function() {
+
+     
+
+        }
+      },
     });
+
+
+$('.section_new').on('scroll touchmove mousewheel', function(e){
+e.preventDefault();
+e.stopPropagation(); 
+return false;
+})
