@@ -25,8 +25,10 @@ header {
   box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   backdrop-filter: blur(10px);
-  align-items: center; 
-  transition: top 0.5s ease-in-out, opacity 1s ease ;
+  align-items: center;
+  transition:
+    top 0.5s ease-in-out,
+    opacity 1s ease;
   opacity: 1;
 }
 
@@ -34,7 +36,6 @@ header {
   top: -120px;
   opacity: 0;
 }
-
 
 .gnb ul {
   display: flex;
@@ -72,11 +73,12 @@ header {
   padding-bottom: 53%;
   background: #ffd502;
   background-size: calc(100% / 10) calc(100% / 6);
-  background-image: linear-gradient(to right, #f2f2f2 2px, transparent 2px),
+  background-image:
+    linear-gradient(to right, #f2f2f2 2px, transparent 2px),
     linear-gradient(to bottom, #f2f2f2 2px, transparent 2px);
 }
 
-.banner_title_wrap  {
+.banner_title_wrap {
   position: absolute;
   top: 10%;
   left: 5%;
@@ -84,7 +86,6 @@ header {
   flex-wrap: wrap;
   flex-direction: column;
 }
-
 
 .banner_title_wrap p:first-child {
   font-family: "Rubik", sans-serif;
@@ -96,7 +97,7 @@ header {
   -webkit-text-stroke-color: #ffc70f;
 }
 
-.banner_title_wrap p:last-child{
+.banner_title_wrap p:last-child {
   font-size: 46px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -128,7 +129,6 @@ header {
   overflow: hidden;
   border-radius: 16px;
   border: 3px solid #fff;
-  
 }
 
 .section_banner .banner_btn_wrap .banner_btn a {
@@ -140,17 +140,15 @@ header {
   box-sizing: border-box;
   background: rgba(242, 242, 242, 0.9);
   text-decoration: none;
-  
 }
 
-.section_banner .banner_btn_wrap .banner_btn a .plus_icon_btn{
+.section_banner .banner_btn_wrap .banner_btn a .plus_icon_btn {
   display: none;
 }
 
 .section_banner .banner_btn_wrap .banner_btn:last-child a {
   gap: 24px;
 }
-
 
 .section_banner .banner_btn_wrap .banner_btn a .txt_wrap {
   display: flex;
@@ -166,7 +164,7 @@ header {
   color: #6c6c6c;
 }
 
-.section_banner .banner_btn_wrap .banner_btn a:hover .plus_icon_btn{
+.section_banner .banner_btn_wrap .banner_btn a:hover .plus_icon_btn {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -174,33 +172,30 @@ header {
   display: flex;
 }
 
-.section_banner .banner_btn_wrap .banner_btn a :is(img, .txt_wrap){ 
+.section_banner .banner_btn_wrap .banner_btn a :is(img, .txt_wrap) {
   opacity: 1;
   transition: opacity 0.1s ease;
 }
 
-.section_banner .banner_btn_wrap .banner_btn a:hover :is(img, .txt_wrap){ 
+.section_banner .banner_btn_wrap .banner_btn a:hover :is(img, .txt_wrap) {
   opacity: 0;
 }
 
-.section_banner .banner_btn_wrap .banner_btn a .banner_btm_bg_img{
+.section_banner .banner_btn_wrap .banner_btn a .banner_btm_bg_img {
   position: absolute;
   bottom: -10%;
   right: -20%;
   opacity: 0;
   transform: translateY(0) rotate(0deg);
-  transition:
-    transform 0.6s;
-   transition-delay: 0s;
+  transition: transform 0.6s;
+  transition-delay: 0s;
 }
 
-.section_banner .banner_btn_wrap .banner_btn a:hover .banner_btm_bg_img{
+.section_banner .banner_btn_wrap .banner_btn a:hover .banner_btm_bg_img {
   opacity: 1;
   transform: rotate(-20deg);
   transform-origin: center bottom;
-  
 }
-
 
 /* section_new */
 .section_new {
@@ -211,9 +206,17 @@ header {
   align-items: center;
   background: #fff;
 }
-.no-scroll {
+
+.section_new .contents {
+  width: 83%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap:24px;
+  align-items: center;
+  
+}
+.section_new.scroll-lock {
   overflow: hidden;
-  height: 100%; /* 모바일에서 추가 스크롤 방지 */
 }
 
 .section_title_wrap {
@@ -231,25 +234,23 @@ header {
   color: #e3000b;
 }
 
-.swiper {
-  width: 83%;
-  height: 700px;
-  padding-left: 50px;
-  padding-right: 50px;
-  overflow: hidden; 
+.swiperA {
+  height: 670px;
+  overflow: hidden;
+  display: flex; flex-wrap: wrap;
+  justify-content:space-between;
 }
 
-.swiper-slide {
+.swiperA .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 638px;
-  height: 384px;
+  height: 384px; 
   opacity: 0.4;
-  
-  
+  padding: 0 30px;
 }
 
-.swiper-slide img {
+.swiperA .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -257,29 +258,117 @@ header {
   border-radius: 12px;
 }
 
-.swiper-slide-prev,
-.swiper-slide-next {
-/* height: 136px; */
-  perspective: 1000px;
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+.swiperA .swiper-slide-prev,
+.swiperA .swiper-slide-next {
   height: 136px !important;
-
 }
-.swiper-slide-next img {
+.swiperA .swiper-slide-next img {
   transform: perspective(1000px) rotateX(15deg);
   transform-style: preserve-3d;
-
-
- 
 }
-.swiper-slide-prev img {
+.swiperA .swiper-slide-prev img {
   transform: perspective(1000px) rotateX(-15deg);
   transform-style: preserve-3d;
-
-  
 }
 
-.swiper-slide-active {
+.swiperA .swiper-slide-active {
   opacity: 1;
   height: 384px !important;
+}
+
+
+.swiperB{
+  display: flex; flex-direction: column; height:353px; overflow: hidden;
+}
+.swiperB .swiper-slide{
+  display: flex; flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+  gap: 34px;
+  align-items: center;
+  background-color: #2848b3;
+}
+
+.swiperB .swiper-slide .title_wrap{
+  width: 100%;
+  display: flex; flex-wrap: wrap; flex-direction: column; gap: 16px;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+  border-bottom: #111 4px solid ;
+}
+
+
+
+
+
+
+
+
+
+/* 슬라이드 카운터 */
+.slide-counter {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  z-index: 100;
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  color: #e3000b ;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  z-index: 100;
+}
+
+.scroll-line {
+  width: 2px;
+  height: 60px;
+  background: rgba(255, 34, 34, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background: rgba(227, 0, 11, 0.5);
+  animation: scrollMove 2s ease-in-out infinite;
+}
+
+@keyframes scrollMove {
+  0% {
+    top: -30px;
+  }
+  100% {
+    top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    width: 90%;
+  }
+
+  .swiper-slide {
+    width: 90%;
+    height: 384px;
+  }
+
+  .scroll-indicator {
+    left: 20px;
+  }
+
+  .swiper-pagination {
+    right: 20px !important;
+  }
 }
