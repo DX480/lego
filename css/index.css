@@ -286,7 +286,6 @@ header {
   box-sizing: border-box;
   gap: 34px;
   align-items: center;
-  background-color: #2848b3;
 }
 
 .swiperB .swiper-slide .title_wrap{
@@ -297,11 +296,24 @@ header {
   border-bottom: #111 4px solid ;
 }
 
+.mySwiperB .swiper-wrapper {
+  position: relative;
+}
 
+.mySwiperB .swiper-slide {
+  opacity: 0;
+  transition-property: opacity;
+}
 
+.mySwiperB .swiper-slide-active,
+.mySwiperB .swiper-slide-duplicate-active {
+  opacity: 1 !important;
+}
 
-
-
+.mySwiperB .swiper-slide-prev,
+.mySwiperB .swiper-slide-next {
+  opacity: 0;
+}
 
 
 
