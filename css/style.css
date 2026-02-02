@@ -99,3 +99,20 @@ width: 83%;
     color: #f2f2f2;
 }
 
+.round_btn{
+   width: fit-content;
+    padding: 20px 80px;
+    border: 3px solid #E3000B;
+    color: #E3000B;
+    border-radius: 100px;
+    transition: .3s;
+    background-color: #f2f2f2;
+}
+.round_btn:hover{
+ background: #E3000B;
+ color: #fff;
+}
+.round_btn p{
+   font-size: 16px; line-height: 130%;
+}
+
