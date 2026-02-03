@@ -24,6 +24,8 @@ display:flex; flex-wrap: wrap; flex-direction: column; gap: 32px;
 align-items: end;
 margin: 0 auto;
 width: 83%;
+text-align: center;
+margin-bottom: 60px;
 }
 
 
@@ -116,3 +118,23 @@ width: 83%;
    font-size: 16px; line-height: 130%;
 }
 
+.plus_btn{
+     display: flex; flex-wrap: wrap; width: 227px; gap: 6px; color: #E3000B; justify-content: center; position: relative; padding-bottom: 10px; box-sizing: border-box; align-items: center;
+}
+
+
+
+.plus_btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%; 
+  height: 1px;
+  background-color: #E3000B;
+  transition: width 0.4s ease; 
+}
+
+.plus_btn:hover::after {
+  width: 100%; 
+}

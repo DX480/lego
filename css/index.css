@@ -220,18 +220,13 @@ header {
   overflow: hidden;
 }
 
-.section_title_wrap {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.section_title {
+.section_new .section_title {
   color: rgba(0, 0, 0, 0);
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #e3000b;
 }
 
-.section_article {
+.section_new .section_article {
   color: #e3000b;
 }
 
@@ -280,7 +275,7 @@ header {
 
 
 .swiperB{
-  display: flex; flex-direction: column; height:353px; overflow: hidden;
+  display: flex; flex-direction: column; height:367px; overflow: hidden;
 }
 .swiperB .swiper-slide{
   display: flex; flex-direction: column;
@@ -388,4 +383,66 @@ header {
   .swiper-pagination {
     right: 20px !important;
   }
+}
+
+/* series */
+
+.section_series{ width: 100%; display: flex; flex-wrap: wrap; flex-direction: column; gap: 160px; align-items: center; background: #111;
+  padding:160px 0;}
+  
+.section_series .section_title{ color: rgba(255, 255, 255, 0); -webkit-text-stroke-width: 3px; -webkit-text-stroke-color: #f2f2f2;}
+.section_series .section_article{ color: #f2f2f2;}
+
+.section_series .contents{ width: 83%; display: flex; flex-wrap: wrap; flex-direction: column; gap: 72px; color: #f2f2f2;align-items: center; }
+
+
+.section_series .contents .card_list{ width: 100%; display: flex; flex-wrap: wrap; flex-direction: column;}
+.section_series .contents .card_list .card{ display: flex; flex-wrap: wrap; justify-content: space-between; padding: 72px 56px; position: relative; align-items: center;}
+
+.section_series .contents .card_list .card:first-child{border-top: 3px solid #f2f2f2; border-bottom: 1.5px solid #f2f2f2;}
+.section_series .contents .card_list .card:nth-child(2){border-bottom: 1.5px solid #f2f2f2;}
+.section_series .contents .card_list .card:last-child{ border-bottom: 3px solid #f2f2f2;}
+
+.section_series .title_wrap{ display: flex; flex-wrap: wrap; flex-direction: column; gap: 32px;}
+.section_series .title_wrap .content_title_large span{ padding-left: 20px;}
+.section_series .title_wrap .content_article_medium{ padding-left: 72px; line-height: 160%;}
+
+.section_series .circle_btn p{
+    color: #f2f2f2;
+}
+
+.section_series .contents .card_list .card .card_thum{
+  position: absolute;
+  width: 640px;
+  height: 360px;
+  top: -49px;
+  right: 270px;
+  background: #ffc70f;
+  border-radius: 14px;
+  border: #f2f2f2 2px solid;
+  box-sizing: border-box;
+  transform: translateY(0) rotate(-10deg);
+  transition: transform 1s, opacity 0.6s, scale 0.6s;
+  opacity: 0;
+  transition-delay: 0s;
+  scale: 0.8;
+}
+
+.section_series .contents .card_list .card:hover .card_thum{
+  
+  transform: rotate(10deg);
+  transform-origin: center center;
+  opacity: 1;
+  transition: transform 1s, opacity 0.6s, scale 0.6s;
+  scale: 1;
+}
+
+.section_series .contents .card_list .card:first-child .card_thum{
+background: url(/images/mavel_card.jpg);
+}
+.section_series .contents .card_list .card:nth-child(2) .card_thum{
+background: url(/images/batman_card.jpg);
+}
+.section_series .contents .card_list .card:last-child .card_thum{
+background: url(/images/starwars_card.jpg);
 }
