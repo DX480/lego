@@ -5,6 +5,18 @@
   flex-direction: column;
 }
 
+#cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.1s ease;
+}
+
 header {
   position: fixed;
   max-width: 1808px;
@@ -387,9 +399,10 @@ header {
 
 /* series */
 
-.section_series{ width: 100%; display: flex; flex-wrap: wrap; flex-direction: column; gap: 160px; align-items: center; background: #111;
-  padding:160px 0;}
+.section_series{position: relative; width: 100%; display: flex; flex-wrap: wrap; flex-direction: column; gap: 160px; align-items: center; background: #111;
+  padding:160px 0; overflow: hidden;}
   
+.section_series .section_title_wrap{z-index: 50;}
 .section_series .section_title{ color: rgba(255, 255, 255, 0); -webkit-text-stroke-width: 3px; -webkit-text-stroke-color: #f2f2f2;}
 .section_series .section_article{ color: #f2f2f2;}
 
@@ -446,3 +459,44 @@ background: url(../images/batman_card.jpg);
 .section_series .contents .card_list .card:last-child .card_thum{
 background: url(../images/starwars_card.jpg);
 }
+
+
+.point_cursor{
+  width: 600px;
+  height: 600px;
+  border-radius: 1000px;
+  background: #e3000b;
+  position: absolute; /* absolute → fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(100px);
+  transition: all .3s;
+  pointer-events: none; /* 이것도 추가 */
+  opacity: 0; /* 초기에는 숨김 */
+}
+/* .dark-mask {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: #121212;
+  z-index: 100;
+  pointer-events: none;
+ 
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  
+  mask-image: radial-gradient(
+    circle 30px at var(--mouse-x) var(--mouse-y),
+    transparent 0%,
+    transparent 50%,   
+    black 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 1000px at var(--mouse-x) var(--mouse-y),
+    transparent 0%,
+    transparent 50%,
+    black 100%
+  );
+
+}
+ */
