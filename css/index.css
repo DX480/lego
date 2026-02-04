@@ -438,11 +438,11 @@ header {
 }
 
 .section_series .contents .card_list .card:first-child .card_thum{
-background: url(/images/mavel_card.jpg);
+background: url(../images/mavel_card.jpg);
 }
 .section_series .contents .card_list .card:nth-child(2) .card_thum{
-background: url(/images/batman_card.jpg);
+background: url(../images/batman_card.jpg);
 }
 .section_series .contents .card_list .card:last-child .card_thum{
-background: url(/images/starwars_card.jpg);
+background: url(../images/starwars_card.jpg);
 }

@@ -115,15 +115,14 @@ margin-bottom: 60px;
  color: #fff;
 }
 .round_btn p{
-   font-size: 16px; line-height: 130%;
+   font-size: 18px; line-height: 130%;
 }
+
 
 .plus_btn{
-     display: flex; flex-wrap: wrap; width: 227px; gap: 6px; color: #E3000B; justify-content: center; position: relative; padding-bottom: 10px; box-sizing: border-box; align-items: center;
+     display: flex; flex-wrap: wrap; gap: 6px; color: #E3000B; justify-content: center; position: relative; padding-bottom: 10px; box-sizing: border-box; align-items: center;
 }
-
-
-
+.plus_btn p{ font-size: 18px;}
 .plus_btn::after {
   content: '';
   position: absolute;
