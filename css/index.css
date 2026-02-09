@@ -5,18 +5,6 @@
   flex-direction: column;
 }
 
-#cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #000;
-  box-sizing: border-box;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  pointer-events: none;
-  transition: all 0.1s ease;
-}
-
 header {
   position: fixed;
   max-width: 1808px;
@@ -482,59 +470,51 @@ background: url(../images/starwars_card.jpg);
 }
 
 
+/* cominsoon */
 .section_comingsoon{
   width: 100%; display: flex; flex-wrap: wrap; flex-direction: column; padding: 160px 0; box-sizing: border-box; justify-content: space-between; text-align: center;
   background: #2A27E8;
   background: linear-gradient(180deg,rgba(42, 39, 232, 1) 69%, rgba(17, 17, 17, 1) 100%);
   position: relative;
   overflow: hidden;
+  gap: 680px;
 }
 
-.section_comingsoon p:nth-child(3){ position: absolute;top: 50%; left: 50%; 
-  transform: translate(-50%, -50%); font-size: 400px; font-family: "Rubik", sans-serif; font-weight: 700; line-height: 80%; letter-spacing: 1px; 
+.section_comingsoon p:nth-child(3){
+  position: absolute;left: 160px; top: 370px;
+ font-size: 400px; font-family: "Rubik", sans-serif; font-weight: 700; line-height: 100%; letter-spacing: 1px; 
   color: #f2f2f2;-webkit-text-stroke-width: 30px; -webkit-text-stroke-color: #f2f2f2;
-  filter: drop-shadow(rgba(17, 17, 17, 0.8) 0px -140px 4px);  
+  filter: drop-shadow(rgba(17, 17, 17, 0.9) 0px -97px 2px);  
   z-index: 1;
 }
 
-.section_comingsoon .contents{ width: 100%; display: flex; flex-direction: column; gap: 60px; align-items: center;}
-.section_comingsoon .contents .swiper{width: 100%;}
-.swiper-wrapper {
-  transition-timing-function: linear;
-}
-
-.section_comingsoon .contents .mySwiper {
-  height: calc(100vh - 120px);
-  margin: 60px;
-}
-
+.section_comingsoon .contents{ width: 100%; display: flex; flex-direction: column; gap: 60px; align-items: center; z-index: 40;}
+.section_comingsoon .contents .swiper{width: 100%; margin: 0 !important; position: relative; overflow: hidden;}
 
 .section_comingsoon .contents .swiper-slide {
-  width: 400px;
-  height: 400px;
+  width: 390px;
+  height: 405px;
   overflow: hidden;
-  background-position: top;
-  background-size: cover;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
 }
 
-.section_comingsoon .contents .swiper-wrapper {
-  width: 100%; display: flex;
-  position: relative;
-  transition-timing-function: linear !important;
+.coming_soon_slide .swiper-wrapper {transition-timing-function: linear !important;width: 100%; display: flex;position: relative; }
 
+.section_comingsoon .round_btn{
+    border: 3px solid #f2f2f2;
+    color: #f2f2f2;
+    background-color: #f2f2f200;
+    backdrop-filter:blur(20px);
 }
-.swiper-container .swiper-slide {width: auto; padding: 10px;}
+.section_comingsoon .round_btn:hover{
+ background: rgba(242, 242, 242, 0.2);
+}
 
 
-/* .dark-mask {
+.dark-mask {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-color: #121212;
+  background-color:rgba(17, 17, 17, 1);
   z-index: 100;
   pointer-events: none;
  
@@ -542,17 +522,25 @@ background: url(../images/starwars_card.jpg);
   --mouse-y: 50%;
   
   mask-image: radial-gradient(
-    circle 30px at var(--mouse-x) var(--mouse-y),
+    circle 800px at var(--mouse-x) var(--mouse-y),
     transparent 0%,
-    transparent 50%,   
+    transparent 95%,   
     black 100%
   );
   -webkit-mask-image: radial-gradient(
-    circle 1000px at var(--mouse-x) var(--mouse-y),
+    circle 800px at var(--mouse-x) var(--mouse-y),
     transparent 0%,
-    transparent 50%,
+    transparent 95%,
     black 100%
   );
 
 }
- */
+
+.section_about{
+  width: 100%;
+  height: 3064px;
+  background: url("../images/about_bg.jpg") 50% 50% /cover;
+  padding: 327px 0;
+  box-sizing: border-box;
+
+}

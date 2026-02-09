@@ -19,7 +19,7 @@ var swiperA = new Swiper(".mySwiperA", {
   speed: 1200,
   mousewheel: false,
 
-  allowTouchMove: true,
+  allowTouchMove: false,
   simulateTouch: true,
 
   autoHeight: false,
