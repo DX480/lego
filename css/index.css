@@ -536,11 +536,98 @@ background: url(../images/starwars_card.jpg);
 
 }
 
+/* about */
 .section_about{
   width: 100%;
-  height: 3064px;
+  height: 2516px;
   background: url("../images/about_bg.jpg") 50% 50% /cover;
   padding: 327px 0;
   box-sizing: border-box;
+  display: flex; flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.section_about .contents{
+  display: flex; flex-direction: column; width: 100%; gap: 72px; align-items: center; color: #f2f2f2; width: fit-content;
+}
+
+.section_about .contents .text_wrap{
+  display: flex; flex-direction: column; gap: 44px;text-align: center;
+}
+.section_about .contents .text_wrap > p:first-child{
+  font-family: 'lego'; font-size: 400px; letter-spacing: -13px; line-height: 80%; text-indent: -100px;
+   color: rgba(242, 242, 242, 0.6);
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #f2f2f2;
+}
+
+.section_about .contents .text_wrap .line{
+  width: 50%;
+  height: 272px;
+  border-right: 2px solid #f2f2f2;
+}
+
+.section_about .round_btn{
+    border: 3px solid #f2f2f2;
+    color: #f2f2f2;
+    background-color: #f2f2f200;
+    backdrop-filter:blur(20px);
+}
+.section_about .round_btn:hover{
+ background: rgba(242, 242, 242, 0.2);
+}
+
+/* bulider */
+.section_builder{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding: 160px 0;
+  box-sizing: border-box;
+  background: #111111;
+background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 20%, rgba(242, 242, 242, 1) 20%, rgba(242, 242, 242, 1) 77%, rgba(17, 17, 17, 1) 77%);
+}
+.section_builder .section_title{ color: rgba(255, 255, 255, 0); -webkit-text-stroke-width: 3px; -webkit-text-stroke-color: #FAD409;}
+.section_builder .video_box{
+  width: 100%;
+  height: 1022px;
+  display: flex; flex-direction: column; gap: 64px;
+  background: url("../images/bulider_bg.jpg") no-repeat 50% 50% /cover;
+  align-items: center;
+}
+
+.section_builder .video_box video{
+  width: 1102px;
+}
+
+.section_builder .contents{ width: 100%; display: flex; flex-direction: column; gap: 72px;align-items: center;}
+.section_builder .title_wrap{
+  display: flex; flex-direction: column; gap: 10px;
+}
+.section_builder .card_list{
+  display: flex; flex-wrap: wrap; padding-bottom: 120px; box-sizing: border-box; position: relative; width: 1400px; justify-content: center;
+}
+.section_builder .card_list .card{
+  width: 340px; height: 462px; display: flex; flex-direction: column; justify-content: space-between; padding: 60px 54px;
+  box-sizing: border-box; align-items: center; text-align: center;
+  background: #F2F2F2;
+  background: linear-gradient(0deg,rgba(242, 242, 242, 1) 34%, rgba(250, 212, 9, 1) 100%);
+  border: #FFD502 2.5px solid;
+  border-radius: 16px;
+}
+.section_builder .card_list .card > p:nth-child(2){
+  font-size: 28px; font-weight: 800; letter-spacing: -0.64px;
+}
+.section_builder .card_list .card img{
+  width: 170px;
+  height: 170px;
+}
+
+.section_builder .card_list .card:first-child{
+  position: absolute; top: 120px; left: 85px;
+}
+.section_builder .card_list .card:last-child{
+  position: absolute; top: 120px; right: 85px;
 }

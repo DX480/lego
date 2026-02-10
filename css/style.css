@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'lego';
+    src: url('../font/LEGO.ttf') format('truetype');
+}
+
 .section_title{  font-family: "Rubik", sans-serif; font-size: 200px; letter-spacing: -4px; font-weight: 900; line-height: 80%;}
 .section_article{font-size: 44px; letter-spacing: -2px; font-weight: 700; line-height: 90%;}
 
@@ -11,7 +16,7 @@
 .content_title_xxxsmall{font-size: 16px; letter-spacing: -0.5px; font-weight: 400;}
 
 .content_article_xxlarge{font-size: 32px; letter-spacing: -1px; font-weight: 600;}
-.content_article_xlarge{font-size: 26px; letter-spacing: -1px; font-weight: 500;}
+.content_article_xlarge{font-size: 26px; letter-spacing: -1px; font-weight: 400;}
 .content_article_large{font-size: 24px; letter-spacing: -0.5px; font-weight: 500;}
 .content_article_medium{font-size: 20px; letter-spacing: -1px; font-weight: 500;}
 .content_article_small{font-size: 18px; letter-spacing: -0.5px; font-weight: 600;}
@@ -29,7 +34,7 @@ margin-bottom: 60px;
 }
 
 .section_title_wrap_medium{
-    width: 100%; display: flex; flex-direction: column; gap: 30px; color: #f2f2f2;
+    width: 100%; display: flex; flex-direction: column; gap: 30px; color: #f2f2f2; text-align: center;
 }
 .section_title_wrap_medium p{line-height: 90%;}
 .section_title_wrap_medium .content_article_xlarge{ font-weight: 400;}
