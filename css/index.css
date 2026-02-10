@@ -450,8 +450,22 @@ background: url(../images/batman_card.jpg);
 background: url(../images/starwars_card.jpg);
 }
 
-.section_series .plus_btn:hover{ color: #f2f2f2;}
+.section_series .round_btn{
+    border: 3px solid #f2f2f2;
+    color: #f2f2f2;
+    background-color: #f2f2f200;
+    backdrop-filter:blur(20px);
+    z-index: 40;
+}
+.section_series .round_btn:hover{
+ background: rgba(242, 242, 242, 0.2);
+    z-index: 40;
+}
+
+
+/* .section_series .plus_btn:hover{ color: #f2f2f2;}
 .section_series .plus_btn:hover:after { background: #f2f2f2; }
+ */
 
 .point_cursor{
   width: 1000px;
@@ -607,7 +621,7 @@ background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 2
   display: flex; flex-direction: column; gap: 10px;
 }
 .section_builder .card_list{
-  display: flex; flex-wrap: wrap; padding-bottom: 120px; box-sizing: border-box; position: relative; width: 1400px; justify-content: center;
+  display: flex; flex-wrap: wrap; box-sizing: border-box; position: relative; width: 1400px; justify-content: space-evenly;
 }
 .section_builder .card_list .card{
   width: 340px; height: 462px; display: flex; flex-direction: column; justify-content: space-between; padding: 60px 54px;
@@ -625,9 +639,7 @@ background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 2
   height: 170px;
 }
 
-.section_builder .card_list .card:first-child{
-  position: absolute; top: 120px; left: 85px;
+.section_builder .card_list .card:nth-child(2n-1){
+ margin-top: 120px;
 }
-.section_builder .card_list .card:last-child{
-  position: absolute; top: 120px; right: 85px;
-}
+
