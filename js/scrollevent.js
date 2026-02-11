@@ -79,6 +79,15 @@ $(document).ready(function () {
     scrub: 3,
   });
 
+  ScrollTrigger.create({
+    trigger: ".section_news",
+    start: "bottom bottom",
+    end: "+=100%", 
+    pin: true,
+    pinSpacing: true,
+    scrub: 3,
+  });
+
 
 
 /*   $("section").each(function (index) {

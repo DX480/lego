@@ -1,39 +1,10 @@
-
-function getResponsiveValues() {
-let screenWidth = window.innerWidth;
-if (screenWidth < 320) screenWidth = 320;
-if (screenWidth > 1920) screenWidth = 1920;
-
-  const scale = screenWidth / 1920;
-  
- 
-     if(screenWidth > 319 && screenWidth < 799){
-    return {
-      radius: 1200 * scale ,  
-      bottomOffset: 1200 * scale * 0.2,  
-      angleRange: 90 
-    };
-  } else {
-    return {
-      radius: 1200 * scale,  
-      bottomOffset: 1200 * scale * 0.3,  
-      angleRange: 60 
-    };
-  }
-  
-  
-}
-
-var values = getResponsiveValues();
-var radius = values.radius;
-var start = -values.angleRange;
-var end = values.angleRange;
+var radius =800;
+var start = -40;
+var end = 60;
 var itemCount = $(".section_news .card").length - 1;
 let increment = diff(start, end) / itemCount;
+let offset = 0;
 let isAnimating = false;
-let screenWidth = window.innerWidth;
-let offset = (screenWidth <= 500) ? 4 : 2;  
-
 
 const items = [
     { url: "https://picsum.photos/300/400?1" },
@@ -41,10 +12,7 @@ const items = [
     { url: "https://picsum.photos/300/400?3" },
     { url: "https://picsum.photos/300/400?4" },
     { url: "https://picsum.photos/300/400?5" },
-    { url: "https://picsum.photos/300/400?6" },
-    { url: "https://picsum.photos/300/400?7" },
-    { url: "https://picsum.photos/300/400?8" },
-    { url: "https://picsum.photos/300/400?9" },
+    { url: "https://picsum.photos/300/400?5" },
 ];
 
 function diff(num1, num2) {
@@ -53,75 +21,47 @@ function diff(num1, num2) {
 
 const rnd = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-
-function initializeCarousel() {
-  values = getResponsiveValues();
-  radius = values.radius;
-  start = -values.angleRange;
-  end = values.angleRange;
-  increment = diff(start, end) / itemCount;
-  
-  $(".section_news .slide").css("bottom", radius);
-  $(".section_news .container").css("bottom", -radius + values.bottomOffset);
-  
-
-  $(".section_news .card").each(function(i, o) {
-    let angle = start + increment * i;
-    $(o).css("transform", "rotate(" + angle + "deg)");
-  });
-}
+// 초기 설정
+$(".section_news .slide").css("bottom", radius);
+$(".section_news .container").css("bottom", -radius + 350);
 
 
-initializeCarousel();
-
-$(".section_news .slide").each(function(i, o) {
+$(".slide").each(function(i, o) {
   let url = items[i % items.length].url;
   let image = $("<img/>", {src: url});
   $(o).append(image);
 });
 
+$(".section_news .card").each(function(i, o) {
+  let angle = start + increment * i;
+  $(o).css("transform", "rotate(" + angle + "deg)");
+});
 
+// 초기 애니메이션
 let tl = anime.timeline({});
 tl.add({
   targets: '.section_news .container',
-  rotate: [90, increment * offset ],
+  rotate: [90, 0],
   duration: 1500,
   easing: "easeOutExpo",
 });
 tl.add({
-  targets: '.section_news .slide',
+  targets: '.slide',
   opacity: [0, 1],
   easing: "easeInOutQuad",
   duration: 800,
   delay: anime.stagger(120)
 }, 0);
 
+// 카드 가시성 업데이트 (중앙 기준 양옆 2개씩만 표시)
 function updateCardVisibility() {
   let centerIndex = Math.floor(itemCount / 2);
   let currentCenterCard = centerIndex - offset;
   
-
-  let screenWidth = window.innerWidth;
-  let visibleDistance;
-  if(screenWidth >0 && screenWidth < 501){visibleDistance = 0;}
-  else if (screenWidth > 500 && screenWidth < 799) {
-    visibleDistance = 1;  
-  } else {
-    visibleDistance = 2; 
-  }
-  
   $(".section_news .card").each(function(i) {
     let distance = Math.abs(i - currentCenterCard);
     
-
-    if (i === currentCenterCard) {
-      $(this).addClass("center");
-    } else {
-      $(this).removeClass("center");
-    }
-    
-
-    if (distance > visibleDistance) {
+    if (distance > 2) {
       $(this).addClass("hidden");
     } else {
       $(this).removeClass("hidden");
@@ -129,13 +69,13 @@ function updateCardVisibility() {
   });
 }
 
-
+// 회전 함수 - 개선된 버전
 function rotateCarousel(direction) {
   if (isAnimating) return;
   
   let centerIndex = Math.floor(itemCount / 2);
   let minOffset = -(centerIndex - 1);
-  let maxOffset = centerIndex - 1;
+  let maxOffset = centerIndex - 2;
   
   let newOffset = offset + direction;
   
@@ -146,9 +86,9 @@ function rotateCarousel(direction) {
   
   anime({
     targets: '.section_news .container',
-    easing: "easeOutQuart", 
+    easing: "easeOutQuart", // 더 빠른 easing
     rotate: increment * offset,
-    duration: 300,
+    duration: 600, // 1200ms -> 600ms로 단축
     complete: function() {
       isAnimating = false;
     }
@@ -157,9 +97,9 @@ function rotateCarousel(direction) {
   updateCardVisibility();
 }
 
-// 마우스 휠 
+// 마우스 휠 이벤트 - 개선된 버전
 let lastWheelTime = 0;
-let wheelCooldown = 200;
+let wheelCooldown = 200; // 연속 휠 방지를 위한 쿨다운
 
 $(".section_news .slider").on("wheel", function(e) {
   e.preventDefault();
@@ -176,13 +116,13 @@ $(".section_news .slider").on("wheel", function(e) {
   }
 });
 
-// 드래그 이벤트 
+// 드래그 이벤트 - 개선된 버전
 let isDragging = false;
 let startX = 0;
-let dragThreshold = 30; 
+let dragThreshold = 30; // 50px -> 30px로 감소하여 더 빠른 반응
 
 $(".section_news .container").on("mousedown touchstart", function(e) {
-  if (isAnimating) return;
+  if (isAnimating) return; // 애니메이션 중에는 드래그 시작 안 함
   isDragging = true;
   startX = e.type === "mousedown" ? e.pageX : e.originalEvent.touches[0].pageX;
 });
@@ -207,32 +147,14 @@ $(document).on("mouseup touchend", function() {
   isDragging = false;
 });
 
-updateCardVisibility();
-
-let resizeTimeout;
-$(window).on("resize", function() {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(function() {
-    let newScreenWidth = window.innerWidth;
-    
-   
-    if (newScreenWidth <= 500) {
-      offset = 4;  
-    } else {
-      offset = 2;  
-    }
-    
-    
-    initializeCarousel();
-    
-
-    anime({
-      targets: '.section_news .container',
-      rotate: increment * offset,
-      duration: 300,  
-      easing: "easeOutQuart"
-    });
-    
-    updateCardVisibility();
-  }, 100);  
+// 키보드 지원 추가 (추가 기능)
+$(document).on("keydown", function(e) {
+  if (e.key === "ArrowLeft") {
+    rotateCarousel(1);
+  } else if (e.key === "ArrowRight") {
+    rotateCarousel(-1);
+  }
 });
+
+// 초기 가시성 설정
+updateCardVisibility();
