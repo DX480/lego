@@ -6,14 +6,6 @@ let increment = diff(start, end) / itemCount;
 let offset = 0;
 let isAnimating = false;
 
-const items = [
-    { url: "https://picsum.photos/300/400?1" },
-    { url: "https://picsum.photos/300/400?2" },
-    { url: "https://picsum.photos/300/400?3" },
-    { url: "https://picsum.photos/300/400?4" },
-    { url: "https://picsum.photos/300/400?5" },
-    { url: "https://picsum.photos/300/400?5" },
-];
 
 function diff(num1, num2) {
   return num1 > num2 ? (num1 - num2) : (num2 - num1);
@@ -23,14 +15,8 @@ const rnd = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // 초기 설정
 $(".section_news .slide").css("bottom", radius);
-$(".section_news .container").css("bottom", -radius + 350);
+$(".section_news .container").css("bottom", -radius + 250);
 
-
-$(".slide").each(function(i, o) {
-  let url = items[i % items.length].url;
-  let image = $("<img/>", {src: url});
-  $(o).append(image);
-});
 
 $(".section_news .card").each(function(i, o) {
   let angle = start + increment * i;
@@ -53,7 +39,7 @@ tl.add({
   delay: anime.stagger(120)
 }, 0);
 
-// 카드 가시성 업데이트 (중앙 기준 양옆 2개씩만 표시)
+
 function updateCardVisibility() {
   let centerIndex = Math.floor(itemCount / 2);
   let currentCenterCard = centerIndex - offset;
@@ -69,7 +55,7 @@ function updateCardVisibility() {
   });
 }
 
-// 회전 함수 - 개선된 버전
+// 회전 함수 
 function rotateCarousel(direction) {
   if (isAnimating) return;
   
@@ -86,9 +72,9 @@ function rotateCarousel(direction) {
   
   anime({
     targets: '.section_news .container',
-    easing: "easeOutQuart", // 더 빠른 easing
+    easing: "easeOutQuart", 
     rotate: increment * offset,
-    duration: 600, // 1200ms -> 600ms로 단축
+    duration: 600,
     complete: function() {
       isAnimating = false;
     }
@@ -97,9 +83,9 @@ function rotateCarousel(direction) {
   updateCardVisibility();
 }
 
-// 마우스 휠 이벤트 - 개선된 버전
+// 마우스 휠 
 let lastWheelTime = 0;
-let wheelCooldown = 200; // 연속 휠 방지를 위한 쿨다운
+let wheelCooldown = 200;
 
 $(".section_news .slider").on("wheel", function(e) {
   e.preventDefault();
@@ -116,13 +102,13 @@ $(".section_news .slider").on("wheel", function(e) {
   }
 });
 
-// 드래그 이벤트 - 개선된 버전
+// 드래그 
 let isDragging = false;
 let startX = 0;
-let dragThreshold = 30; // 50px -> 30px로 감소하여 더 빠른 반응
+let dragThreshold = 30; 
 
 $(".section_news .container").on("mousedown touchstart", function(e) {
-  if (isAnimating) return; // 애니메이션 중에는 드래그 시작 안 함
+  if (isAnimating) return; 
   isDragging = true;
   startX = e.type === "mousedown" ? e.pageX : e.originalEvent.touches[0].pageX;
 });
@@ -147,14 +133,5 @@ $(document).on("mouseup touchend", function() {
   isDragging = false;
 });
 
-// 키보드 지원 추가 (추가 기능)
-$(document).on("keydown", function(e) {
-  if (e.key === "ArrowLeft") {
-    rotateCarousel(1);
-  } else if (e.key === "ArrowRight") {
-    rotateCarousel(-1);
-  }
-});
 
-// 초기 가시성 설정
 updateCardVisibility();
