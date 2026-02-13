@@ -79,38 +79,29 @@ $(document).ready(function () {
     scrub: 3,
   });
 
-  ScrollTrigger.create({
+  let newsTimeline = gsap.timeline({
+    scrollTrigger: {
     trigger: ".section_news",
     start: "bottom bottom",
     end: "+=100%", 
     pin: true,
     pinSpacing: true,
     scrub: 3,
+    },
   });
 
 
 
-/*   $("section").each(function (index) {
-    var section = this;
-    var sectionId = $(this).attr("id");
+/*   newsTimeline.to(
+    ".footer_thum",
+    {
+      scale: 0.7,
+      duration: 0.2,
+      ease: "power2.out",
+    },
+    0.7,
+  ); */
 
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: "+=40%",
-        pin: true,
-        pinSpacing: true,
-        scrub: 5,
-        anticipatePin: false,
-        onEnter: function () {
-          console.log("Section entered: " + sectionId);
-        },
-        onLeave: function () {
-          console.log("Section left: " + sectionId);
-        },
-      });
-  }); */
 });
 
 

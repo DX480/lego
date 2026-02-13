@@ -728,10 +728,9 @@ background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 2
    position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    bottom: -500px;
-    width: 615px;
-    height: 709px;
-    background: url("../images/footer_thum.png") no-repeat 50% 50% /cover;
+    bottom: -35%;
+    width: 35vw;
+    max-width: 614px;
   }
  
  /* footer */
@@ -742,15 +741,16 @@ background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 2
    width: 100%;
    background: #FAD409 ;
    position: relative;
-   padding: 72px 56px 40px 56px;
+   padding: 72px 160px;
    box-sizing: border-box;
    gap: 100px;
    
   }
+.footer_top{width: 100%; display: flex; flex-wrap: wrap; gap: 48px;}
 
 .footer_gnb_wrap{
   width: 100%;
-  display: flex; flex-wrap: wrap;justify-content: space-between;
+  display: flex; flex-wrap: wrap; justify-content: space-between;
 }
 .footer_gnb{
   display: flex; flex-wrap: wrap; gap: 48px;
@@ -760,12 +760,17 @@ background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 2
   display: flex; flex-direction: column; gap: 16px; text-align: center; 
 }
 
+
+.footer_util{
+ height: 100%; display: flex; flex-direction: column; gap: 20px; align-items: end;
+}
 .sns_wrap{ display: flex; flex-wrap: wrap; gap: 32px; align-items: end;}
 
 #location_btn{
+  width: fit-content;
   display: flex;
   flex-wrap: wrap;
-  padding: 8px 16px;
+  padding: 8px 34px;
   justify-content: space-between;
   color: #F2F2F2;
   background: #2A27E8;
@@ -788,19 +793,19 @@ background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 2
 
 .footer_btm{width: 100%; display: flex; flex-direction: column; gap: 56px;}
 .footer_connect_wrap{width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between;}
-.footer_email_form{display: flex; flex-direction: column; gap: 10px;position: relative;}
+.footer_email_form{display: flex; flex-direction: column; justify-content: space-between; position: relative;}
 .footer_email_form label{padding:0 16px; font-size: 20px; font-weight: 700;}
-.user_email{ width: 300px; height: 58px; background: #f2f2f2; border-radius: 58px; border: 3px #111 solid; padding: 0 16px; box-sizing: border-box; font-size: 16px;}
-.user_email:focus {
+#user_email{ width: 300px; height: 58px; background: #f2f2f2; border-radius: 58px; border: 3px #111 solid; padding: 0 16px; box-sizing: border-box; font-size: 16px;}
+#user_email:focus {
  border: 3px #E3000B solid;
   outline: none;
 }
 .footer_email_form button{ position: absolute; bottom: 0; right: 0; width: 58px; height: 58px; border-radius: 58px; background: #111;}
 .footer_email_form .fa-chevron-right{ color: #F2F2F2;}
 .footer_email_form button:hover{ background: #E3000B;}
+#user_email:focus::placeholder { color: transparent; }
 
-.footer_legal_wrap{width: 100%; display: flex; flex-direction: column; gap: 10px;}
-.footer_policy_list{width: 100%;}
+.footer_policy_list{width: 100%; display: flex; flex-direction: column; gap: 10px;}
 .footer_policy_list ul{display: flex; flex-wrap: wrap; gap: 24px;}
 .footer_policy_list ul li a{display: inline-block; font-size: 16px; font-weight: 400; }
 .footer_legal_wrap p{ width: 100%;  word-break:keep-all;font-size: 16px; font-weight: 300;}
