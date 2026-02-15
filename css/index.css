@@ -7,14 +7,15 @@
 
 header {
   position: fixed;
-  max-width: 1808px;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 1000;
-  width: 94%;
+  width: 94vw;
+  max-width: 1808px;
+  min-width: 272px;
   height: 88px;
-  margin: 30px auto;
   padding: 0 104px;
   box-sizing: border-box;
   display: flex;
@@ -36,7 +37,7 @@ header {
   top: -120px;
   opacity: 0;
 }
-
+.gnb .buger_menu{display: none; cursor: pointer;}
 .gnb ul {
   display: flex;
   flex-wrap: wrap;
@@ -76,6 +77,7 @@ header {
   background-image:
     linear-gradient(to right, #f2f2f2 2px, transparent 2px),
     linear-gradient(to bottom, #f2f2f2 2px, transparent 2px);
+    overflow: hidden;
 }
 
 .banner_title_wrap {
@@ -89,16 +91,17 @@ header {
 
 .banner_title_wrap p:first-child {
   font-family: "Rubik", sans-serif;
-  font-size: 198px;
+  font-size: clamp(32px, 10.3vw, 198px);
+  max-width: 1920px;
   font-weight: 900;
   letter-spacing: -1.3px;
   color: #f2f2f2;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: clamp(0.5px, 0.1vw, 3px);
   -webkit-text-stroke-color: #ffc70f;
 }
 
 .banner_title_wrap p:last-child {
-  font-size: 46px;
+  font-size: clamp(16px, 2.4vw, 46px);
   font-weight: 700;
   letter-spacing: -1px;
   color: #111;
@@ -124,10 +127,11 @@ header {
 }
 
 .section_banner .banner_btn_wrap .banner_btn {
-  width: 436px;
+   width: 436px;
   position: relative;
   overflow: hidden;
   border-radius: 16px;
+  box-sizing: border-box;
   border: 3px solid #fff;
 }
 
@@ -136,18 +140,26 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
   padding: 24px;
   box-sizing: border-box;
   background: rgba(242, 242, 242, 0.9);
   text-decoration: none;
 }
 
+
+.section_banner .banner_btn_wrap .banner_btn a img{
+  width: clamp(70px, 6.6vw, 127px);
+    height: auto;
+    flex: 0 0 auto;
+
+}
 .section_banner .banner_btn_wrap .banner_btn a .plus_icon_btn {
   display: none;
 }
 
 .section_banner .banner_btn_wrap .banner_btn:last-child a {
-  gap: 24px;
+  gap: clamp(12px, 1.25vw, 24px);
 }
 
 .section_banner .banner_btn_wrap .banner_btn a .txt_wrap {
@@ -157,12 +169,6 @@ header {
   gap: 5px;
 }
 
-.section_banner .banner_btn_wrap .banner_btn a .btn_article {
-  font-size: 16px;
-  letter-spacing: -1px;
-  font-weight: 300;
-  color: #6c6c6c;
-}
 
 .section_banner .banner_btn_wrap .banner_btn a:hover .plus_icon_btn {
   position: absolute;
@@ -182,6 +188,7 @@ header {
 }
 
 .section_banner .banner_btn_wrap .banner_btn a .banner_btm_bg_img {
+  scale: 1.3;
   position: absolute;
   bottom: -10%;
   right: -20%;
@@ -203,7 +210,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
+  background: #f2f2f2;
   box-sizing: border-box;
   gap: 30px;
 }
@@ -212,10 +219,11 @@ header {
   width: 83%;
   display: flex;
   flex-wrap: nowrap;
-  gap:24px;
+  justify-content: space-between;
   align-items: center;
   
 }
+
 .section_new.scroll-lock {
   overflow: hidden;
 }
@@ -252,6 +260,8 @@ header {
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  border: 3px #fff solid;
+  box-sizing: border-box;
 }
 
 
@@ -275,13 +285,13 @@ header {
 
 
 .swiperB{
-  display: flex; flex-direction: column; height:367px; overflow: hidden;
+  display: flex; flex-direction: column; height:384px; overflow: hidden;
 }
 .swiperB .swiper-slide{
   display: flex; flex-direction: column;
   padding: 30px;
   box-sizing: border-box;
-  gap: 34px;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -314,6 +324,7 @@ header {
   opacity: 0;
   pointer-events: none;
 }
+.section_new .contents .content_article_medium{width: 100%; line-height: 150%; }
 
 
 
