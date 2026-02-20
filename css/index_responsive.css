@@ -145,4 +145,12 @@
   .section_banner .banner_btn_wrap .banner_btn a .banner_btm_bg_img {
   width: 40%;
 }
+
+/* new */
+.section_new{ width: 100%; padding: 52px 24px;}
+.section_new .contents{width: 100%;}
+.swiperA{ width: 272px;}
+.swiperB{ display: none;}
+
+
 }

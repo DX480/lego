@@ -254,8 +254,8 @@ header {
   padding: 0 30px;
 }
 
-.swiperA .swiper-slide img {
-  display: block;
+.swiperA .swiper-slide .card {
+  display: flex;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -269,11 +269,11 @@ header {
 .swiperA .swiper-slide-next {
   height: 136px !important;
 }
-.swiperA .swiper-slide-next img {
+.swiperA .swiper-slide-next .card {
   transform: perspective(1000px) rotateX(15deg);
   transform-style: preserve-3d;
 }
-.swiperA .swiper-slide-prev img {
+.swiperA .swiper-slide-prev .card  {
   transform: perspective(1000px) rotateX(-15deg);
   transform-style: preserve-3d;
 }
@@ -282,6 +282,21 @@ header {
   opacity: 1;
   height: 384px !important;
 }
+.swiperA .swiper-slide-text-box{display: none;}
+
+.swiperA .swiper-wrapper .swiper-slide:first-child  .card{
+  background: url("../images/new_card03.jpg" ) 50% 50% /cover no-repeat;
+}
+.swiperA .swiper-wrapper .swiper-slide:nth-child(2) .card{
+  background: url("../images/new_card01.jpg" ) 50% 50% /cover no-repeat;
+}
+.swiperA .swiper-wrapper .swiper-slide:nth-child(3) .card{
+  background: url("../images/new_card02.jpg" ) 50% 50% /cover no-repeat;
+}
+.swiperA .swiper-wrapper .swiper-slide:last-child  .card{
+  background: url("../images/new_card03.jpg" ) 50% 50% /cover no-repeat;
+}
+
 
 
 .swiperB{

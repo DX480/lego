@@ -7,13 +7,9 @@
 .logo{ width: 60px; height: 60px; }
 .right_gnb ul {gap: 16px;}
 .right_gnb ul li img {width: 28px;}
-    .section_new{display: none;}
-    .section_series{display: none;}
-    .section_comingsoon{display: none;}
-    .section_about{display: none;}
-    .section_builder{display: none;}
-    .section_news{display: none;}
-    footer{display: none;}
+
+
+    
 
 }
 @media screen and ( max-width: 1280px) {
