@@ -87,16 +87,16 @@ header {
 
 /* slogan */
 .section_slogan{ width: 100%; padding: 200px 283px; background: #111; position: relative;  display: flex; flex-wrap: wrap; justify-content: end; align-content: end; box-sizing: border-box;}
-.section_slogan > img{position: absolute; top: 160px; left: 237px; border-radius: 184px 0 0 0; border: 3px solid #f2f2f2; z-index: 1;}
+.section_slogan > img{position: absolute; top: 160px; left: 237px; border-radius: 184px 0 0 0; border: 3px solid #f2f2f2; z-index: 1; width: 28%;}
 .section_slogan .contents{ position: relative; display: flex; flex-wrap: wrap; flex-direction: column; gap: 84px; z-index: 2;}
-.section_slogan .contents > p{  font-family: 'lego'; font-size: 150px; letter-spacing: -4px; line-height: 80%;
+.section_slogan .contents > p{  font-family: 'lego'; font-size: clamp(32px, 10.3vw, 150px); letter-spacing: -4px; line-height: 80%;
   color: rgba(242, 242, 242, 0.8);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #f2f2f2; }
 
-  .section_slogan .contents .info{ display: flex; gap: 56px; max-width:1000px; align-items: end; }
-  .section_slogan .contents img{ border-radius: 100px 0 100px 0; border: 3px solid #f2f2f2;}
-  .section_slogan .contents .info p{color: #f2f2f2; word-break: keep-all;}
+.section_slogan .contents .info{ display: flex; gap: 56px; max-width:1000px; align-items: end; }
+.section_slogan .contents img{ border-radius: 100px 0 100px 0; border: 3px solid #f2f2f2; width: 50%;}
+.section_slogan .contents .info p{color: #f2f2f2; word-break: keep-all;}
 
   /* vaules */
   .section_values{ width: 100%; background: #111; display: flex; justify-content: center;}
@@ -131,7 +131,7 @@ display: flex; justify-content: space-between; align-items: center;}
 .section_history{ width: 100%; padding: 160px; box-sizing: border-box;display: flex; flex-direction: column; height: 1400px; justify-content: space-between;}
 .section_history .history_visual{ width: 100%; position: relative;}
 .section_history .history_visual > p{ font-size: 90px; font-weight: 600; letter-spacing: -1px; line-height: 100%;  font-family: "Rubik";color: #798C9A; text-align: center;}
-.section_history .history_visual > img{ position: absolute; top:50px; left: 550px;  transform: rotate(10deg);}
+.section_history .history_visual > img{ position: absolute; top:50px; left: 550px;  transform: rotate(10deg); width: 30%;}
 .section_history .history_text_wrap {width: 100%; display: flex; flex-direction: column; gap: 72px; text-align: center; }
 .section_history .sub_section_title_wrap {width: 100%; display: flex; flex-direction: column; gap: 32px;  position: relative; z-index: 2;}
 .section_history .sub_section_title_wrap .section_title{ color: rgba(227, 0, 11, 1); -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #fff;}
@@ -176,6 +176,13 @@ display: flex; justify-content: space-between; align-items: center;}
 .section_group .profile_card_list{ width: 100%; display: flex; padding: 56px 0; box-sizing: border-box; background: #111; color: #f2f2f2; overflow: hidden;}
 .section_group .profile_card_list .swiper-wrapper{ width: 100%; display: flex; transition-timing-function: linear !important}
 .section_group .profile_card_list .swiper-wrapper .swiper-slide{ display: flex; flex-direction: column; gap: 16px; width: 300px; height: 369px;}
-.section_group .profile_card_list .swiper-wrapper .swiper-slide text_wrap{ display: flex; flex-direction: column; gap: 8px;}
+.section_group .profile_card_list .swiper-wrapper .swiper-slide .text_wrap{ display: flex; flex-direction: column; gap: 8px;}
 .section_group .profile_card_list .swiper-wrapper .swiper-slide .content_article_xsmall{ font-weight: 400;}
+
+.section_supporting{width: 100%; text-align: center; padding: 160px 0; display: flex; flex-direction: column; gap: 72px; background: #111;
+  background: radial-gradient(linear,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 98%);}
+.section_supporting .sub_section_title_wrap{width: 100%; display: flex;flex-direction: column; gap: 30px;}
+.section_supporting .box_list {width: 100%; display: flex;flex-direction: column; gap: 0px;}
+.section_supporting .box_list .text_info{width: 100%; display: flex;flex-direction: column; gap: 32px;}
+.section_supporting .box_list .text_info .box .box_title{width: 100%; display: flex;flex-direction: column; gap: 72px;}
 
